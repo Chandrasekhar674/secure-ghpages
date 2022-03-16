@@ -43,7 +43,9 @@ jobs:
       - name: install python packages
         run: pip install PyGithub
         
-      - name: execute py script # run sj-gobierno.py to get the latest data
+      - name: github token # run sj-gobierno.py to get the latest data
         env: 
           GH_TOKEN_TEST: ${{ secrets.GH_TOKEN }}
-        run: python gh.py    
+        
+      - name: execute py script # run sj-gobierno.py to get the latest data  
+        run: python gh.py  
