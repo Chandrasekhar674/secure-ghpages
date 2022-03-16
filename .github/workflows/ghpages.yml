@@ -47,5 +47,6 @@ jobs:
         env: 
           GH_TOKEN_TEST: ${{ secrets.GH_TOKEN }}
         
-      - name: execute py script # run sj-gobierno.py to get the latest data  
-        run: python gh.py  
+      - name: execute py script # run sj-gobierno.py to get the latest data 
+        uses: actions/setup-python@v2
+      - run: python gh.py  
