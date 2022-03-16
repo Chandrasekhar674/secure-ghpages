@@ -46,7 +46,9 @@ jobs:
       - name: github token # run sj-gobierno.py to get the latest data
         env: 
           GH_TOKEN_TEST: ${{ secrets.GH_TOKEN }}
-        
-      - name: execute py script # run sj-gobierno.py to get the latest data 
-        uses: actions/setup-python@v2
-      - run: python gh.py  
+        # run: python gh.py
+        run: | 
+         curl \ 
+         -H "Accept: application/vnd.github.v3+json" \
+         https://api.github.com/repos/Chandrasekhar674/secure-ghpages/branches/gh-pages/protection/enforce_admins  
+ 
